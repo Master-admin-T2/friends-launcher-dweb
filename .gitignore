@@ -21,7 +21,7 @@ dist/
 
 # Installer outputs (PyInstaller)
 # Do NOT commit any packaged binary files
-*.exe
+####*.exe
 *.bin
 *.app
 *.pyz
@@ -50,10 +50,10 @@ desktop.ini
 # dweb binary files
 # (you can remove this section if you *want* dweb.exe in repo)
 # --------------------------------------------------
-dweb.exe
-dweb
-dweb*.exe
-dweb*.zip
+###dweb.exe
+###dweb
+###dweb*.exe
+###dweb*.zip
 
 # --------------------------------------------------
 # Python launcher helper files
