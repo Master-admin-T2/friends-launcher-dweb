@@ -21,7 +21,7 @@ Source Code
 ----------------------------------------------------------
 The complete source code for `dweb-cli` can be obtained from:
 
-  https://codeberg.org/happybeing/dweb
+  https://github.com/happybeing/dweb/releases
 
 Git branch: main  
 Component: dweb-cli/
@@ -42,7 +42,7 @@ For license text, see:
 Additional Notes
 ----------------------------------------------------------
 The Friends Launcher itself is a separate program developed
-by Tobias (“Friends Launcher Project”), and is distributed
+by Master_admin_T2 (“Friends Launcher Project”), and is distributed
 under its own license.
 
 This file and the following section document the open-source
@@ -84,6 +84,25 @@ MIT OR Unlicense (8): aho-corasick, byteorder, csv, csv-core, memchr, same-file,
 MPL-2.0 (3): attohttpc, fastrlp, fastrlp
 Unicode-3.0 (18): icu_collections, icu_locale_core, icu_normalizer, icu_normalizer_data, icu_properties, icu_properties_data, icu_provider, litemap, potential_utf, tinystr, writeable, yoke, yoke-derive, zerofrom, zerofrom-derive, zerotrie, zerovec, zerovec-derive
 Zlib (5): const_format, const_format_proc_macros, foldhash, libz-rs-sys, zlib-rs
+
+Open Source Notices
+===================
+
+This project uses the following open source components:
+
+1) dweb CLI (AGPLv3)
+   - Purpose: Runs the decentralized web backend and the Friends application.
+   - License: GNU Affero General Public License v3.0 (AGPLv3)
+   - Source code: https://github.com/happybeing/dweb/releases
+
+2) Python packages
+   - requests (Apache 2.0 or similar)
+   - psutil (BSD/Apache-style license)
+   - ecdsa (MIT-style license)
+   - pycryptodome / Crypto (various open source licenses)
+
+For each of these components, please refer to their respective project pages
+and license files for complete and up-to-date licensing information.
 
 
 ==========================================================

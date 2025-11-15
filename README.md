@@ -190,3 +190,18 @@ You are free to use, modify, and distribute this software, including for commerc
 
 Full license text:  
 https://www.gnu.org/licenses/agpl-3.0.html
+
+## dweb Licensing Notice (AGPLv3)
+
+This project bundles the `dweb.exe` binary to run the Friends decentralized application.
+The dweb CLI is licensed under the GNU Affero General Public License v3 (AGPLv3).
+
+In accordance with the license terms, the full source code of dweb is available at:
+
+https://github.com/happybeing/dweb/releases
+
+The `dweb.exe` binary included in this repository is unmodified and provided for convenience.
+All rights to dweb and its source code belong to its original authors.
+
+
+

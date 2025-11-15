@@ -1,0 +1,20 @@
+DWEB LICENSE NOTICE
+===================
+
+This project includes and/or interacts with the `dweb` command line interface (dweb CLI),
+which is licensed under the GNU Affero General Public License v3.0 (AGPLv3).
+
+In accordance with the AGPLv3 requirements, the full source code of dweb is publicly available at:
+
+   	https://github.com/happybeing/dweb/releases
+
+The `dweb.exe` binary distributed with this launcher is provided unmodified for convenience.
+All rights, trademarks, and copyrights related to dweb belong to its original authors.
+
+If you use this launcher and the included dweb binary to provide a network service,
+you are responsible for complying with the AGPLv3 license terms, including providing
+the complete corresponding source code of your modified version (if any) to the users
+of that service.
+
+For the full text of the GNU Affero General Public License v3.0, see:
+    https://www.gnu.org/licenses/agpl-3.0.html
