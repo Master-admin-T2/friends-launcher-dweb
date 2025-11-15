@@ -1,0 +1,113 @@
+name: Build Friends Launcher (Windows, Linux, macOS)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller requests psutil ecdsa pycryptodome
+
+      - name: Build Friends Launcher (Windows)
+        run: |
+          pyinstaller --name FriendsLauncher `
+            --icon friends-launcher-logo.ico `
+            --noconsole `
+            friends-launcher.py
+
+      - name: Copy extra files
+        run: |
+          copy dweb.exe dist\FriendsLauncher\
+          copy LICENSE dist\FriendsLauncher\
+          copy README.md dist\FriendsLauncher\
+          copy open_source_notices.txt dist\FriendsLauncher\
+          copy DWEB_LICENSE_NOTICE.txt dist\FriendsLauncher\
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: FriendsLauncher-Windows
+          path: dist/FriendsLauncher/
+
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller requests psutil ecdsa pycryptodome
+
+      - name: Build Friends Launcher (Linux)
+        run: |
+          pyinstaller --name FriendsLauncher --noconsole friends-launcher.py
+
+      - name: Copy extra files
+        run: |
+          cp LICENSE dist/FriendsLauncher/
+          cp README.md dist/FriendsLauncher/
+          cp open_source_notices.txt dist/FriendsLauncher/
+          cp DWEB_LICENSE_NOTICE.txt dist/FriendsLauncher/
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: FriendsLauncher-Linux
+          path: dist/FriendsLauncher/
+
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install pyinstaller requests psutil ecdsa pycryptodome
+
+      - name: Build Friends Launcher (macOS)
+        run: |
+          pyinstaller --name FriendsLauncher --noconsole friends-launcher.py
+
+      - name: Copy extra files
+        run: |
+          cp LICENSE dist/FriendsLauncher/
+          cp README.md dist/FriendsLauncher/
+          cp open_source_notices.txt dist/FriendsLauncher/
+          cp DWEB_LICENSE_NOTICE.txt dist/FriendsLauncher/
+
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: FriendsLauncher-macOS
+          path: dist/FriendsLauncher/

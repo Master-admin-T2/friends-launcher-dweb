@@ -266,7 +266,7 @@ class DwebLauncherWin:
         self.master = master
 
         # Fixed window geometry; scroll handles extra content
-        self.normal_geometry = "560x620"
+        self.normal_geometry = "640x620"
 
         self.master.title("Friends Launcher (Windows)")
         self.master.geometry(self.normal_geometry)
