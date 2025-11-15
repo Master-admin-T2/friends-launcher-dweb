@@ -3,8 +3,6 @@ name: Build Windows EXE
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -12,13 +10,13 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -26,23 +24,18 @@ jobs:
           pip install pyinstaller requests psutil ecdsa pycryptodome
 
       - name: Build Friends Launcher (PyInstaller)
-        run: |
-          pyinstaller ^
-            --name FriendsLauncher ^
-            --icon friends-launcher-logo.ico ^
-            --noconsole ^
-            friends-launcher.py
+        run: pyinstaller --name FriendsLauncher --icon friends-launcher-logo.ico --noconsole friends-launcher.py
 
-      - name: Copy dweb.exe next to launcher
+      - name: Prepare distribution folder
         run: |
-          mkdir dist\FriendsLauncher\bin
-          copy dweb.exe dist\FriendsLauncher\bin\
-          copy open_source_notices.txt dist\FriendsLauncher\
-          copy DWEB_LICENSE_NOTICE.txt dist\FriendsLauncher\
+          mkdir dist\FriendsLauncher\extra
+          copy dweb.exe dist\FriendsLauncher\
           copy LICENSE dist\FriendsLauncher\
           copy README.md dist\FriendsLauncher\
+          copy open_source_notices.txt dist\FriendsLauncher\
+          copy DWEB_LICENSE_NOTICE.txt dist\FriendsLauncher\
 
-      - name: Upload artifact (Windows build)
+      - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: FriendsLauncher-Windows
