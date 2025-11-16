@@ -70,7 +70,7 @@ pip install requests psutil ecdsa pycryptodome
 ## Installation
 
 1. Place the launcher script and `dweb.exe` in the same folder.
-2. Run python friends-launcher-v9.33-win.py
+2. Run python friends-launcher.py
 or use a packaged executable.
 
 ---
@@ -165,15 +165,11 @@ If set, the launcher:
 
 Example PyInstaller command:
 
-pyinstaller ^
-  --name FriendsLauncher ^
-  --icon friends-launcher-logo.ico ^
-  --noconsole ^
-  friends-launcher-v9.33-win.py
+pyinstaller --name FriendsLauncher --icon friends-launcher-logo.ico --noconsole friends-launcher.py
 
 Linux / macOS
 
-pyinstaller --name FriendsLauncher friends-launcher-v9.33-win.py
+pyinstaller --name FriendsLauncher friends-launcher.py
 
 You can also use **GitHub Actions** to build all three OS targets without owning those systems.
 

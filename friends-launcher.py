@@ -43,7 +43,7 @@ APP_PORT = 5537
 
 # Set this to the expected SHA256 hash of dweb.exe when packaging.
 # Leave empty ("") to skip hash checking.
-EXPECTED_DWEB_SHA256 = ""
+EXPECTED_DWEB_SHA256 = "c75ad8b9c53299b732aff3f522bb4db2f37a5cde6c1abdadc470938b97f4aee4"
 
 # Icon file name (should be placed next to the .py / .exe on Windows)
 ICON_FILENAME = "friends-launcher-logo.ico"

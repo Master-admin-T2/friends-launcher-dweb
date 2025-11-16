@@ -71,3 +71,4 @@ launcher-*.log
 # Project-specific ignores
 # --------------------------------------------------
 ##### friends-launcher-logo.ico
+build-windows.yml
